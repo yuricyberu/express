@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FOX API</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <img id="fox" src="" alt="randomfox">
+
+        <script>
+            const request=new XMLHttpRequest();
+            request.open("GET","https://randomfox.ca/floof/");
+            request.onload=function(){
+                const data=JSON.parse(request.responseText);
+                const image=document.getElementById("fox");
+                image.src=data.image;
+            };
+            request.send();
+        </script> 
+    </body>
+</html>
